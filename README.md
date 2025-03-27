@@ -46,11 +46,6 @@ Sistema de gestion de ** Inventario/Pos ** desarrollado con laravel utilizando a
     sudo chmod -R 755 saas/storage
     ```
 
-7. Ejecutar el comando de shield para generar los roles y permisos para cada modulo:
-    ```bash
-    php artisan shield:install
-    ```
-
 ¡Listo! Ahora puedes acceder al sistema en tu navegador web.
 
 # Uso
@@ -58,7 +53,7 @@ Sistema de gestion de ** Inventario/Pos ** desarrollado con laravel utilizando a
 Una vez instalado y si se han ejecutados los seeders, puedes iniciar sesión en el sistema utilizando las siguientes credenciales:
 
 Correo: ronald.niz@marka.com.py
-Contraseña: tu-contraseña
+Contraseña: password
 
 # Soporte
 
