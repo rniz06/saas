@@ -31,7 +31,7 @@ class AuthController extends Controller
         $campo = filter_var($request->usuario, FILTER_VALIDATE_EMAIL) ? 'email' : 'username';
 
         if (Auth::attempt([$campo => $request->usuario, 'password' => $request->contrasena])) {
-            return redirect()->intended('/home');
+            return redirect()->intended('/');
         }
 
         return back()->withErrors(['error' => 'Credenciales inválidas']);
