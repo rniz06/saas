@@ -39,7 +39,7 @@ Sistema de gestion de ** Inventario/Pos ** desarrollado con laravel utilizando a
     ```bash
     php artisan migrate --seed
     ```
-# En Linux entorno de desarrollo configurar el usuario y grupo de la carpeta y los permisos
+## En Linux entorno de desarrollo configurar el usuario y grupo de la carpeta y los permisos
 6. Configurar el usuario y grupo de la carpeta y los permisos con los siguientes comandos:
     ```bash
     sudo chmod -R apache:apache saas
