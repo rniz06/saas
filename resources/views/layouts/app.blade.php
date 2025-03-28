@@ -3,7 +3,7 @@
 {{-- Extend and customize the browser title --}}
 
 @section('title')
-    {{ config('adminlte.title') }}
+    {{ tenant('nombre_empresa') ?? config('adminlte.title') }}
     @hasSection('subtitle') | @yield('subtitle') @endif
 @stop
 
