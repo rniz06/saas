@@ -63,7 +63,7 @@ return [
     |
     */
 
-    'logo' => '<b>MarKa</b>Saas',
+    'logo' => '<b>MarKa </b>Saas',
     'logo_img' => 'img/marka-logo.webp',
     'logo_img_class' => 'brand-image img-circle elevation-3',
     'logo_img_xl' => null,

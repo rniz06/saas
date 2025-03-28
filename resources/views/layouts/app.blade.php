@@ -38,8 +38,8 @@
     </div>
 
     <strong>
-        <a href="{{ config('app.company_url', 'https://marka.com.py/') }}">
-            {{ config('app.company_name', 'Saas | MarKa') }}
+        <a class="text-dark" href="https://{{ tenant('sitio_web') ?? 'https://marka.com.py' }}">
+            {{ tenant('nombre_empresa') ?? 'Saas | MarKa' }}
         </a>
     </strong>
 @stop

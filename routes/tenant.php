@@ -38,5 +38,8 @@ Route::middleware([
 
     Route::middleware('auth')->group(function () {
         Route::get('/', [InicioController::class, 'index'])->name('inicio');
+        Route::get('/inicio', function () {
+            return redirect()->route('inicio');
+        })->name('inicio.redirect');
     });
 });
