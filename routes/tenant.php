@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\InicioController;
+use App\Http\Controllers\ProductoController;
 use Illuminate\Support\Facades\Route;
 use Stancl\Tenancy\Middleware\InitializeTenancyByDomain;
 use Stancl\Tenancy\Middleware\InitializeTenancyBySubdomain;
@@ -26,10 +27,6 @@ Route::middleware([
     InitializeTenancyByDomain::class, // Inicializar inquilino por dominio completo ej: cosmos.saas.test
     PreventAccessFromCentralDomains::class,
 ])->group(function () {
-    // Route::get('/', function () {
-    //     //dd(\App\Models\User::all());
-    //     //return 'Esta es su aplicación multiinquilino. El ID del inquilino actual es ' . tenant('id');
-    // });
 
     //Rutas del Controlador de Autenticación
     Route::get('/iniciar-session', [AuthController::class, 'index'])->name('login');
@@ -41,5 +38,20 @@ Route::middleware([
         Route::get('/inicio', function () {
             return redirect()->route('inicio');
         })->name('inicio.redirect');
+
+    /*
+    |--------------------------------------------------------------------------
+    | Modulo Productos
+    |--------------------------------------------------------------------------
+    */
+        Route::controller(ProductoController::class)->group(function () {
+            Route::get('productos', 'index')->name('productos.index');
+            Route::get('productos/create', 'create')->name('productos.create');
+            Route::post('productos/store', 'store')->name('productos.store');
+            Route::get('productos/{producto}', 'show')->name('productos.show');
+            Route::get('productos/{producto}/edit', 'edit')->name('productos.edit');
+            Route::put('productos/{producto}', 'update')->name('productos.update');
+            Route::delete('productos/{producto}', 'destroy')->name('productos.destroy');
+        });
     });
 });
