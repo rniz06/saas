@@ -6,6 +6,8 @@ use App\Models\Tenant;
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Str;
 
 class DatabaseSeeder extends Seeder
 {
@@ -14,13 +16,20 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        User::factory()->create();
+        //User::factory()->create();
 
-        // User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
+        // Crea usuario en la base de datos central
+        User::factory()->create([
+            'name' => 'Ronald Alexis Niz Nuñez',
+            'username' => 'ronald.niz',
+            'email' => 'ronald.niz@marka.com.py',
+            'email_verified_at' => now(),
+            'password' => Hash::make('Rann2006'),
+            //'remember_token' => Str::random(10),
+        ]);
 
+        // crea un tenant en la base de datos central y
+        // adicionalmente un dominio y su propia base de datos
         $tenant1 = Tenant::create([
             'id' => 'cosmos',
             'nombre_empresa' => 'Cosmos',
